@@ -1,11 +1,11 @@
 This repository is based on the [Intrinsec/nftables_exporter project: Expose nftables rules labeled by protocol, table, and chain](https://github.com/Intrinsec/nftables_exporter) and is compiled for ARM v8.
 
-This is my final dashboard on Grafana:
+This is the dashboard created with this exporter in Grafana:
 
 ![grf](https://github.com/user-attachments/assets/56287b70-6741-4e29-8f56-774118878367)
 
 
-To install it on an OpenWRT device (ARMv8), download the binary from this link.
+To install it on an OpenWRT device (ARMv8), download the binary from the repository: [nftables_exporter](https://github.com/giuliomagnifico/openwrt-nftables_exporter/blob/main/nftables-exporter)
 
 Move it to the `/usr/bin/` folder and make it executable with `chmod +x /usr/bin/nftables-exporter`.
 
@@ -59,4 +59,4 @@ If all works you will see the metrics at `http://openwrt_ip:9630/metrics`
 
 ### Grafana
 
-The JSON of my Grafana dashboard can be found here: 
+The JSON of my Grafana dashboard can be found here: [dashboard.json](https://github.com/giuliomagnifico/openwrt-nftables_exporter/blob/main/dashboard.json)
