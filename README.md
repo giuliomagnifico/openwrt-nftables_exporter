@@ -7,6 +7,10 @@ This is the dashboard created with this exporter in Grafana:
 
 To install it on an OpenWRT device (ARMv8), download the binary from the repository: [nftables_exporter](https://github.com/giuliomagnifico/openwrt-nftables_exporter/blob/main/nftables-exporter)
 
+>[!NOTE]
+>You can also compile it from the original source if you're using another architecture:
+> `git clone https://github.com/Intrinsec/nftables_exporter.git && cd nftables_exporter` and compile with your flags. Example for arm v7: `GOOS=linux GOARCH=arm GOARM=7 go build -o nftables_exporter_arm ./cmd/nftables_exporter`
+ 
 Move it to the `/usr/bin/` folder and make it executable with `chmod +x /usr/bin/nftables-exporter`.
 
 Add the service at startup by creating the file `/etc/init.d/nftables-exporter` with the following content:
