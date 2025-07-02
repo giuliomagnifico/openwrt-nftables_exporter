@@ -2,7 +2,7 @@
 >This repository is based on the [Intrinsec/nftables_exporter project: Expose nftables rules labeled by protocol, table, and chain](https://github.com/Intrinsec/nftables_exporter)
 
 
-I adapted this exporter to be able to read/export the data of the new openwrt nftables firewall in Prometheus from my OpenWrt router (NanoPi R4S), and this is the Grafana dashboard created with this exporter:
+I adapted this exporter to be able to read/export the data of the new openwrt nftables firewall in Prometheus from my OpenWrt router (NanoPi R4S), and this is the Grafana dashboard built with this exporter:
 
 ![grf](https://github.com/user-attachments/assets/56287b70-6741-4e29-8f56-774118878367)
 
