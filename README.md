@@ -23,19 +23,17 @@ Add the service at startup by creating the file `/etc/init.d/nftables-exporter` 
 START=99
 STOP=10
 
-NAME=nftables_exporter
-BIN=/usr/bin/nftables-exporter
+USE_PROCD=1
+PROG=/usr/bin/nftables-exporter
 CONFIG=/etc/nftables_exporter.yaml
-PIDFILE=/var/run/$NAME.pid
 
-start() {
-    echo "Starting $NAME..."
-    start-stop-daemon -S -b -m -p "$PIDFILE" --exec "$BIN" -- -config="$CONFIG" >> /var/log/$NAME.log 2>&1
-}
-
-stop() {
-    echo "Stopping $NAME..."
-    start-stop-daemon -K -p "$PIDFILE"
+start_service() {
+    procd_open_instance
+    procd_set_param command "$PROG" -config="$CONFIG"
+    procd_set_param respawn
+    procd_set_param stdout 1
+    procd_set_param stderr 1
+    procd_close_instance
 }
 ```
 
